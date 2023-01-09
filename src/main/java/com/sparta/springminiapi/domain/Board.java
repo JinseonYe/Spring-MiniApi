@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name = "boards")
 public class Board extends TimeStamp{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     //Long id = 0L;
 
-    //제목, 작성자명, 비밀먼호, 작성 내용
+    //제목, 작성자명, 비밀번호, 작성 내용
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    @Column(name ="users")
     private String user;
     private String password;
     private String content;
